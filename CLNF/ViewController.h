@@ -7,9 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <AVFoundation/AVFoundation.h>
+#import <CoreMedia/CoreMedia.h>
+#import <CoreVideo/CoreVideo.h>
 
-@interface ViewController : NSViewController
 
+@interface ViewController : NSViewController<AVCaptureVideoDataOutputSampleBufferDelegate>
+
+@property (weak, nonatomic) IBOutlet NSImageView *imageView;
 
 @end
 

@@ -9,11 +9,30 @@
 /* Begin PBXBuildFile section */
 		0C97CC3C1F94BE8D0015FFC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC3B1F94BE8D0015FFC6 /* AppDelegate.m */; };
 		0C97CC3F1F94BE8D0015FFC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC3E1F94BE8D0015FFC6 /* main.m */; };
-		0C97CC421F94BE8D0015FFC6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC411F94BE8D0015FFC6 /* ViewController.m */; };
+		0C97CC421F94BE8D0015FFC6 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC411F94BE8D0015FFC6 /* ViewController.mm */; };
 		0C97CC441F94BE8D0015FFC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C97CC431F94BE8D0015FFC6 /* Assets.xcassets */; };
 		0C97CC471F94BE8D0015FFC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C97CC451F94BE8D0015FFC6 /* Main.storyboard */; };
 		0C97CC521F94BE8D0015FFC6 /* CLNFTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC511F94BE8D0015FFC6 /* CLNFTests.m */; };
 		0C97CC5D1F94BE8D0015FFC6 /* CLNFUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC5C1F94BE8D0015FFC6 /* CLNFUITests.m */; };
+		0C97CC6C1F94BEA10015FFC6 /* classifiers in Resources */ = {isa = PBXBuildFile; fileRef = 0C97CC6A1F94BEA10015FFC6 /* classifiers */; };
+		0C97CC6D1F94BEA10015FFC6 /* model in Resources */ = {isa = PBXBuildFile; fileRef = 0C97CC6B1F94BEA10015FFC6 /* model */; };
+		0C97CC701F94C0E30015FFC6 /* FaceARDetectIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC6F1F94C0E30015FFC6 /* FaceARDetectIOS.mm */; };
+		0C97CC911F94C3300015FFC6 /* GazeEstimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC751F94C3300015FFC6 /* GazeEstimation.cpp */; };
+		0C97CC921F94C3300015FFC6 /* CCNF_patch_expert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC861F94C3300015FFC6 /* CCNF_patch_expert.cpp */; };
+		0C97CC931F94C3300015FFC6 /* LandmarkDetectionValidator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC871F94C3300015FFC6 /* LandmarkDetectionValidator.cpp */; };
+		0C97CC941F94C3300015FFC6 /* LandmarkDetectorFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC881F94C3300015FFC6 /* LandmarkDetectorFunc.cpp */; };
+		0C97CC951F94C3300015FFC6 /* LandmarkDetectorModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC891F94C3300015FFC6 /* LandmarkDetectorModel.cpp */; };
+		0C97CC961F94C3300015FFC6 /* LandmarkDetectorParameters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC8A1F94C3300015FFC6 /* LandmarkDetectorParameters.cpp */; };
+		0C97CC971F94C3300015FFC6 /* LandmarkDetectorUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC8B1F94C3300015FFC6 /* LandmarkDetectorUtils.cpp */; };
+		0C97CC981F94C3300015FFC6 /* Patch_experts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC8C1F94C3300015FFC6 /* Patch_experts.cpp */; };
+		0C97CC991F94C3300015FFC6 /* PAW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC8D1F94C3300015FFC6 /* PAW.cpp */; };
+		0C97CC9A1F94C3300015FFC6 /* PDM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC8E1F94C3300015FFC6 /* PDM.cpp */; };
+		0C97CC9B1F94C3300015FFC6 /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC8F1F94C3300015FFC6 /* stdafx.cpp */; };
+		0C97CC9C1F94C3300015FFC6 /* SVR_patch_expert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC901F94C3300015FFC6 /* SVR_patch_expert.cpp */; };
+		0C97CC9F1F94CA1C0015FFC6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C97CC9E1F94CA1C0015FFC6 /* AVFoundation.framework */; };
+		0C97CCA11F94D1AE0015FFC6 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C97CCA01F94D1AE0015FFC6 /* opencv2.framework */; };
+		0C97CCA31F94D4520015FFC6 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C97CCA21F94D4520015FFC6 /* CoreMedia.framework */; };
+		0C97CCA51F94D4580015FFC6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C97CCA41F94D4580015FFC6 /* CoreVideo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +58,7 @@
 		0C97CC3B1F94BE8D0015FFC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0C97CC3E1F94BE8D0015FFC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0C97CC401F94BE8D0015FFC6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0C97CC411F94BE8D0015FFC6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0C97CC411F94BE8D0015FFC6 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		0C97CC431F94BE8D0015FFC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C97CC461F94BE8D0015FFC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C97CC481F94BE8D0015FFC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +68,39 @@
 		0C97CC581F94BE8D0015FFC6 /* CLNFUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CLNFUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C97CC5C1F94BE8D0015FFC6 /* CLNFUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLNFUITests.m; sourceTree = "<group>"; };
 		0C97CC5E1F94BE8D0015FFC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C97CC6A1F94BEA10015FFC6 /* classifiers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = classifiers; sourceTree = "<group>"; };
+		0C97CC6B1F94BEA10015FFC6 /* model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = model; sourceTree = "<group>"; };
+		0C97CC6E1F94C0E30015FFC6 /* FaceARDetectIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceARDetectIOS.h; sourceTree = "<group>"; };
+		0C97CC6F1F94C0E30015FFC6 /* FaceARDetectIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FaceARDetectIOS.mm; sourceTree = "<group>"; };
+		0C97CC751F94C3300015FFC6 /* GazeEstimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GazeEstimation.cpp; sourceTree = "<group>"; };
+		0C97CC761F94C3300015FFC6 /* GazeEstimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GazeEstimation.h; sourceTree = "<group>"; };
+		0C97CC791F94C3300015FFC6 /* CCNF_patch_expert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNF_patch_expert.h; sourceTree = "<group>"; };
+		0C97CC7A1F94C3300015FFC6 /* LandmarkCoreIncludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandmarkCoreIncludes.h; sourceTree = "<group>"; };
+		0C97CC7B1F94C3300015FFC6 /* LandmarkDetectionValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandmarkDetectionValidator.h; sourceTree = "<group>"; };
+		0C97CC7C1F94C3300015FFC6 /* LandmarkDetectorFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandmarkDetectorFunc.h; sourceTree = "<group>"; };
+		0C97CC7D1F94C3300015FFC6 /* LandmarkDetectorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandmarkDetectorModel.h; sourceTree = "<group>"; };
+		0C97CC7E1F94C3300015FFC6 /* LandmarkDetectorParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandmarkDetectorParameters.h; sourceTree = "<group>"; };
+		0C97CC7F1F94C3300015FFC6 /* LandmarkDetectorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandmarkDetectorUtils.h; sourceTree = "<group>"; };
+		0C97CC801F94C3300015FFC6 /* Patch_experts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patch_experts.h; sourceTree = "<group>"; };
+		0C97CC811F94C3300015FFC6 /* PAW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAW.h; sourceTree = "<group>"; };
+		0C97CC821F94C3300015FFC6 /* PDM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDM.h; sourceTree = "<group>"; };
+		0C97CC831F94C3300015FFC6 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
+		0C97CC841F94C3300015FFC6 /* SVR_patch_expert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVR_patch_expert.h; sourceTree = "<group>"; };
+		0C97CC861F94C3300015FFC6 /* CCNF_patch_expert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCNF_patch_expert.cpp; sourceTree = "<group>"; };
+		0C97CC871F94C3300015FFC6 /* LandmarkDetectionValidator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LandmarkDetectionValidator.cpp; sourceTree = "<group>"; };
+		0C97CC881F94C3300015FFC6 /* LandmarkDetectorFunc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LandmarkDetectorFunc.cpp; sourceTree = "<group>"; };
+		0C97CC891F94C3300015FFC6 /* LandmarkDetectorModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LandmarkDetectorModel.cpp; sourceTree = "<group>"; };
+		0C97CC8A1F94C3300015FFC6 /* LandmarkDetectorParameters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LandmarkDetectorParameters.cpp; sourceTree = "<group>"; };
+		0C97CC8B1F94C3300015FFC6 /* LandmarkDetectorUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LandmarkDetectorUtils.cpp; sourceTree = "<group>"; };
+		0C97CC8C1F94C3300015FFC6 /* Patch_experts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Patch_experts.cpp; sourceTree = "<group>"; };
+		0C97CC8D1F94C3300015FFC6 /* PAW.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PAW.cpp; sourceTree = "<group>"; };
+		0C97CC8E1F94C3300015FFC6 /* PDM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PDM.cpp; sourceTree = "<group>"; };
+		0C97CC8F1F94C3300015FFC6 /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stdafx.cpp; sourceTree = "<group>"; };
+		0C97CC901F94C3300015FFC6 /* SVR_patch_expert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SVR_patch_expert.cpp; sourceTree = "<group>"; };
+		0C97CC9E1F94CA1C0015FFC6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0C97CCA01F94D1AE0015FFC6 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		0C97CCA21F94D4520015FFC6 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		0C97CCA41F94D4580015FFC6 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +108,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C97CCA51F94D4580015FFC6 /* CoreVideo.framework in Frameworks */,
+				0C97CCA31F94D4520015FFC6 /* CoreMedia.framework in Frameworks */,
+				0C97CCA11F94D1AE0015FFC6 /* opencv2.framework in Frameworks */,
+				0C97CC9F1F94CA1C0015FFC6 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +135,12 @@
 		0C97CC2E1F94BE8D0015FFC6 = {
 			isa = PBXGroup;
 			children = (
+				0C97CCA01F94D1AE0015FFC6 /* opencv2.framework */,
 				0C97CC391F94BE8D0015FFC6 /* CLNF */,
 				0C97CC501F94BE8D0015FFC6 /* CLNFTests */,
 				0C97CC5B1F94BE8D0015FFC6 /* CLNFUITests */,
 				0C97CC381F94BE8D0015FFC6 /* Products */,
+				0C97CC9D1F94CA1B0015FFC6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +157,15 @@
 		0C97CC391F94BE8D0015FFC6 /* CLNF */ = {
 			isa = PBXGroup;
 			children = (
+				0C97CC731F94C3300015FFC6 /* local */,
+				0C97CC6A1F94BEA10015FFC6 /* classifiers */,
+				0C97CC6B1F94BEA10015FFC6 /* model */,
+				0C97CC6E1F94C0E30015FFC6 /* FaceARDetectIOS.h */,
+				0C97CC6F1F94C0E30015FFC6 /* FaceARDetectIOS.mm */,
 				0C97CC3A1F94BE8D0015FFC6 /* AppDelegate.h */,
 				0C97CC3B1F94BE8D0015FFC6 /* AppDelegate.m */,
 				0C97CC401F94BE8D0015FFC6 /* ViewController.h */,
-				0C97CC411F94BE8D0015FFC6 /* ViewController.m */,
+				0C97CC411F94BE8D0015FFC6 /* ViewController.mm */,
 				0C97CC431F94BE8D0015FFC6 /* Assets.xcassets */,
 				0C97CC451F94BE8D0015FFC6 /* Main.storyboard */,
 				0C97CC481F94BE8D0015FFC6 /* Info.plist */,
@@ -135,6 +198,80 @@
 				0C97CC5E1F94BE8D0015FFC6 /* Info.plist */,
 			);
 			path = CLNFUITests;
+			sourceTree = "<group>";
+		};
+		0C97CC731F94C3300015FFC6 /* local */ = {
+			isa = PBXGroup;
+			children = (
+				0C97CC741F94C3300015FFC6 /* GazeEstimate */,
+				0C97CC771F94C3300015FFC6 /* LandmarkDetector */,
+			);
+			path = local;
+			sourceTree = "<group>";
+		};
+		0C97CC741F94C3300015FFC6 /* GazeEstimate */ = {
+			isa = PBXGroup;
+			children = (
+				0C97CC751F94C3300015FFC6 /* GazeEstimation.cpp */,
+				0C97CC761F94C3300015FFC6 /* GazeEstimation.h */,
+			);
+			path = GazeEstimate;
+			sourceTree = "<group>";
+		};
+		0C97CC771F94C3300015FFC6 /* LandmarkDetector */ = {
+			isa = PBXGroup;
+			children = (
+				0C97CC781F94C3300015FFC6 /* include */,
+				0C97CC851F94C3300015FFC6 /* src */,
+			);
+			path = LandmarkDetector;
+			sourceTree = "<group>";
+		};
+		0C97CC781F94C3300015FFC6 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				0C97CC791F94C3300015FFC6 /* CCNF_patch_expert.h */,
+				0C97CC7A1F94C3300015FFC6 /* LandmarkCoreIncludes.h */,
+				0C97CC7B1F94C3300015FFC6 /* LandmarkDetectionValidator.h */,
+				0C97CC7C1F94C3300015FFC6 /* LandmarkDetectorFunc.h */,
+				0C97CC7D1F94C3300015FFC6 /* LandmarkDetectorModel.h */,
+				0C97CC7E1F94C3300015FFC6 /* LandmarkDetectorParameters.h */,
+				0C97CC7F1F94C3300015FFC6 /* LandmarkDetectorUtils.h */,
+				0C97CC801F94C3300015FFC6 /* Patch_experts.h */,
+				0C97CC811F94C3300015FFC6 /* PAW.h */,
+				0C97CC821F94C3300015FFC6 /* PDM.h */,
+				0C97CC831F94C3300015FFC6 /* stdafx.h */,
+				0C97CC841F94C3300015FFC6 /* SVR_patch_expert.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		0C97CC851F94C3300015FFC6 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				0C97CC861F94C3300015FFC6 /* CCNF_patch_expert.cpp */,
+				0C97CC871F94C3300015FFC6 /* LandmarkDetectionValidator.cpp */,
+				0C97CC881F94C3300015FFC6 /* LandmarkDetectorFunc.cpp */,
+				0C97CC891F94C3300015FFC6 /* LandmarkDetectorModel.cpp */,
+				0C97CC8A1F94C3300015FFC6 /* LandmarkDetectorParameters.cpp */,
+				0C97CC8B1F94C3300015FFC6 /* LandmarkDetectorUtils.cpp */,
+				0C97CC8C1F94C3300015FFC6 /* Patch_experts.cpp */,
+				0C97CC8D1F94C3300015FFC6 /* PAW.cpp */,
+				0C97CC8E1F94C3300015FFC6 /* PDM.cpp */,
+				0C97CC8F1F94C3300015FFC6 /* stdafx.cpp */,
+				0C97CC901F94C3300015FFC6 /* SVR_patch_expert.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		0C97CC9D1F94CA1B0015FFC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C97CCA41F94D4580015FFC6 /* CoreVideo.framework */,
+				0C97CCA21F94D4520015FFC6 /* CoreMedia.framework */,
+				0C97CC9E1F94CA1C0015FFC6 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,7 +380,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C97CC6C1F94BEA10015FFC6 /* classifiers in Resources */,
 				0C97CC441F94BE8D0015FFC6 /* Assets.xcassets in Resources */,
+				0C97CC6D1F94BEA10015FFC6 /* model in Resources */,
 				0C97CC471F94BE8D0015FFC6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,8 +408,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C97CC421F94BE8D0015FFC6 /* ViewController.m in Sources */,
+				0C97CC701F94C0E30015FFC6 /* FaceARDetectIOS.mm in Sources */,
+				0C97CC941F94C3300015FFC6 /* LandmarkDetectorFunc.cpp in Sources */,
+				0C97CC421F94BE8D0015FFC6 /* ViewController.mm in Sources */,
+				0C97CC921F94C3300015FFC6 /* CCNF_patch_expert.cpp in Sources */,
+				0C97CC981F94C3300015FFC6 /* Patch_experts.cpp in Sources */,
+				0C97CC9A1F94C3300015FFC6 /* PDM.cpp in Sources */,
+				0C97CC9C1F94C3300015FFC6 /* SVR_patch_expert.cpp in Sources */,
+				0C97CC911F94C3300015FFC6 /* GazeEstimation.cpp in Sources */,
 				0C97CC3F1F94BE8D0015FFC6 /* main.m in Sources */,
+				0C97CC951F94C3300015FFC6 /* LandmarkDetectorModel.cpp in Sources */,
+				0C97CC9B1F94C3300015FFC6 /* stdafx.cpp in Sources */,
+				0C97CC961F94C3300015FFC6 /* LandmarkDetectorParameters.cpp in Sources */,
+				0C97CC931F94C3300015FFC6 /* LandmarkDetectionValidator.cpp in Sources */,
+				0C97CC991F94C3300015FFC6 /* PAW.cpp in Sources */,
+				0C97CC971F94C3300015FFC6 /* LandmarkDetectorUtils.cpp in Sources */,
 				0C97CC3C1F94BE8D0015FFC6 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,8 +562,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CLNF/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mamunul.test.CLNF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -422,8 +580,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CLNF/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mamunul.test.CLNF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
