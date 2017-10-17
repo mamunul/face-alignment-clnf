@@ -8,11 +8,10 @@
 #import <opencv2/opencv.hpp>
 #import "ViewController.h"
 #include "CameraResolution.h"
+#import "FDFaceDetector.h"
+#import "FDFaceFeatures.h"
 
 
-///// opencv
-
-///// C++
 #include <iostream>
 ///// user
 #include "FaceARDetectIOS.h"
@@ -27,6 +26,9 @@
 	AVCaptureDeviceInput *cameraDeviceInput;
 	AVCaptureSession* captureSession;
 	AVSampleBufferDisplayLayer* displayLayer;
+	FDFaceDetector *faceDetector;
+	
+	CameraData cameraData;
 	
 	
 }
@@ -37,23 +39,52 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
+	EAGLContext *eaglContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+	NSDictionary *contextSettings = [NSDictionary dictionaryWithObject:[NSNull null]
+																forKey:(id)kCIContextWorkingColorSpace];
+	CIContext *ciContext = [CIContext contextWithEAGLContext:eaglContext options:contextSettings];
+	faceDetector = [[FDFaceDetector alloc] initWithContext:ciContext];
+	
+	
+	cameraData.numberOfPixels = PreviewHeight * PreviewWidth;
+	
 	
 	frame_count = 0;
 	
 	
 }
-
-
--(void)viewDidAppear{
+-(AVCaptureDevice *)frontFacingCameraIfAvailable
+{
+	NSArray *videoDevices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+	AVCaptureDevice *captureDevice = nil;
+	for (AVCaptureDevice *device in videoDevices)
+	{
+		if (device.position == AVCaptureDevicePositionFront)
+		{
+			captureDevice = device;
+			break;
+		}
+	}
 	
-	[super viewDidAppear];
+	//  couldn't find one on the front, so just get the default video device.
+	if (!captureDevice)
+	{
+		captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+	}
+	
+	return captureDevice;
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+	
+	[super viewDidAppear:animated];
 	
 	
 	displayLayer = [[AVSampleBufferDisplayLayer alloc] init];
 	
 	displayLayer.bounds = self.view.bounds;
 	displayLayer.frame = self.view.frame;
-	displayLayer.backgroundColor = [NSColor blackColor].CGColor;
+	displayLayer.backgroundColor = [UIColor blackColor].CGColor;
 	displayLayer.position = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
 	displayLayer.videoGravity = AVLayerVideoGravityResizeAspect;
 	
@@ -127,31 +158,8 @@
 	
 	
 }
--(AVCaptureDevice *)frontFacingCameraIfAvailable
-{
-	NSArray *videoDevices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
-	AVCaptureDevice *captureDevice = nil;
-	for (AVCaptureDevice *device in videoDevices)
-	{
-		if (device.position == AVCaptureDevicePositionFront)
-		{
-			captureDevice = device;
-			break;
-		}
-	}
-	
-	//  couldn't find one on the front, so just get the default video device.
-	if (!captureDevice)
-	{
-		captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-	}
-	
-	return captureDevice;
-}
--(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection{
-	
-	
 
+-(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection{
 	
 	CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
 	
@@ -169,21 +177,49 @@
 	
 	fx = (fx + fy) / 2.0;
 	fy = fx;
+	cv::Rect_<double> bounding_box;
 	
-	[[[FaceARDetectIOS alloc] init] run_FaceAR:targetImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy];
+	
+	cameraData.processedData = imageBuffer;
+	
+	std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
+	
+	NSArray *faceArray = [faceDetector detectFaceInSampleBuffer:cameraData];
+	std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
+	
+	std::chrono::duration<double,std::milli> d = t2-t1;
+	printf("face detection time:%f\n",d.count());
+	
+	if (faceArray.count > 0) {
+		FDFaceFeatures *faceFeature = (FDFaceFeatures*)[faceArray objectAtIndex:0];
+		
+		const CGRect rect = faceFeature.detectedFaceFeature.bounds;
+		const int width = faceFeature.ImageSize.width;
+		const int height = faceFeature.ImageSize.height;
+		
+		// The origin of CIFaceFeature is right-bottom of image and X-axis and Y-axis are leftward and upward
+		// respectively. But dlib expects upright image so dlib image origin is left-top and X-axis and Y-axis
+		// are rightward and downward respectively. So we transformed CIFaceFeature rectangle to dlib::rectangle
+		// before passing for shape prediction.
+		bounding_box.width = rect.size.width;
+		bounding_box.height = rect.size.height;
+		bounding_box.x = width - rect.origin.x - bounding_box.width;
+		bounding_box.y = height - rect.origin.y - bounding_box.height;
+		
+		
+		[[[FaceARDetectIOS alloc] init] run_FaceAR:targetImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy FaceRect:bounding_box];
+		
+	}
+	
+	//
+	//	[[[FaceARDetectIOS alloc] init] run_FaceAR:targetImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy];
 	
 	frame_count = frame_count + 1;
 	CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
 	[displayLayer enqueueSampleBuffer:sampleBuffer];
-
+	
+	
+	
 }
-
-
-- (void)setRepresentedObject:(id)representedObject {
-	[super setRepresentedObject:representedObject];
-
-	// Update the view, if already loaded.
-}
-
 
 @end
