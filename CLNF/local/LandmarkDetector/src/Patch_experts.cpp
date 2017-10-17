@@ -1,4 +1,4 @@
-﻿///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2016, Carnegie Mellon University and University of Cambridge,
 // all rights reserved.
 //
@@ -342,7 +342,7 @@ void Patch_experts::Read(std::vector<std::string> intensity_svr_expert_locations
 	for(int scale = 0; scale < num_intensity_svr; ++scale)
 	{		
         std::string location = intensity_svr_expert_locations[scale];
-        std::cout << "Reading the intensity SVR patch experts from: " << location << "....";
+        //std::cout << "Reading the intensity SVR patch experts from: " << location << "....";
 		Read_SVR_patch_experts(location,  centers[scale], visibilities[scale], svr_expert_intensity[scale], patch_scaling[scale]);
 	}
 
@@ -361,7 +361,7 @@ void Patch_experts::Read(std::vector<std::string> intensity_svr_expert_locations
 	for(int scale = 0; scale < num_intensity_ccnf; ++scale)
 	{		
         std::string location = intensity_ccnf_expert_locations[scale];
-        std::cout << "Reading the intensity CCNF patch experts from: " << location << "....";
+       // //std::cout << "Reading the intensity CCNF patch experts from: " << location << "....";
 		Read_CCNF_patch_experts(location,  centers[scale], visibilities[scale], ccnf_expert_intensity[scale], patch_scaling[scale]);
 	}
 
@@ -372,7 +372,7 @@ void Patch_experts::Read(std::vector<std::string> intensity_svr_expert_locations
 	
 	if(num_depth_scales > 0 && num_intensity_scales != num_depth_scales)
 	{
-        std::cout << "Intensity and depth patch experts have a different number of scales, can't read depth" << std::endl;
+        //std::cout << "Intensity and depth patch experts have a different number of scales, can't read depth" << std::endl;
 		return;
 	}
 
@@ -387,13 +387,13 @@ void Patch_experts::Read(std::vector<std::string> intensity_svr_expert_locations
 	for(int scale = 0; scale < num_depth_scales; ++scale)
 	{		
         std::string location = depth_svr_expert_locations[scale];
-        std::cout << "Reading the depth SVR patch experts from: " << location << "....";
+        //std::cout << "Reading the depth SVR patch experts from: " << location << "....";
 		Read_SVR_patch_experts(location,  centers_depth[scale], visibilities_depth[scale], svr_expert_depth[scale], patch_scaling_depth[scale]);
 
 		// Check if the scales are identical
 		if(patch_scaling_depth[scale] != patch_scaling[scale])
 		{
-            std::cout << "Intensity and depth patch experts have a different scales, can't read depth" << std::endl;
+            //std::cout << "Intensity and depth patch experts have a different scales, can't read depth" << std::endl;
 			svr_expert_depth.clear();
 			return;			
 		}
@@ -404,7 +404,7 @@ void Patch_experts::Read(std::vector<std::string> intensity_svr_expert_locations
 		// Check if the number of views is identical
 		if(num_views_intensity != num_views_depth)
 		{
-            std::cout << "Intensity and depth patch experts have a different number of scales, can't read depth" << std::endl;
+            //std::cout << "Intensity and depth patch experts have a different number of scales, can't read depth" << std::endl;
 			svr_expert_depth.clear();
 			return;			
 		}
@@ -413,7 +413,7 @@ void Patch_experts::Read(std::vector<std::string> intensity_svr_expert_locations
 		{
 			if(cv::countNonZero(centers_depth[scale][view] != centers[scale][view]) || cv::countNonZero(visibilities[scale][view] != visibilities_depth[scale][view]))
 			{
-                std::cout << "Intensity and depth patch experts have different visibilities or centers" << std::endl;
+                //std::cout << "Intensity and depth patch experts have different visibilities or centers" << std::endl;
 				svr_expert_depth.clear();
 				return;		
 			}
@@ -480,11 +480,11 @@ void Patch_experts::Read_SVR_patch_experts(std::string expert_location, std::vec
 			}
 		}
 	
-        std::cout << "Done" << std::endl;
+        //std::cout << "Done" << std::endl;
 	}
 	else
 	{
-        std::cout << "Can't find/open the patches file" << std::endl;
+        //std::cout << "Can't find/open the patches file" << std::endl;
 	}
 }
 
@@ -561,11 +561,11 @@ void Patch_experts::Read_CCNF_patch_experts(std::string patchesFileLocation, std
 				patches[i][j].Read(patchesFile, windows, sigma_components);
 			}
 		}
-        std::cout << "Done" << std::endl;
+        //std::cout << "Done" << std::endl;
 	}
 	else
 	{
-        std::cout << "Can't find/open the patches file" << std::endl;
+        //std::cout << "Can't find/open the patches file" << std::endl;
 	}
 }
 

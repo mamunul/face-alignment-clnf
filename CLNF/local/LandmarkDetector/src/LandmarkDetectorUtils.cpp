@@ -1023,8 +1023,8 @@ void Draw(cv::Mat img, const cv::Mat_<double>& shape2D, const cv::Mat_<int>& vis
                 cv::Point featurePoint((int)shape2D.at<double>(i), (int)shape2D.at<double>(i +n));
 
                 // A rough heuristic for drawn point size
-                int thickness = (int)std::ceil(3.0* ((double)img.cols) / 640.0);
-                int thickness_2 = (int)std::ceil(1.0* ((double)img.cols) / 640.0);
+                int thickness = (int)std::ceil(3.0* ((double)img.cols) / PreviewHeight);
+                int thickness_2 = (int)std::ceil(1.0* ((double)img.cols) / PreviewHeight);
 
                 cv::circle(img, featurePoint, 1, cv::Scalar(0,255,0), thickness);
                 cv::circle(img, featurePoint, 1, cv::Scalar(255,0,0), thickness_2);
@@ -1111,8 +1111,8 @@ void Draw(cv::Mat img, const cv::Mat_<double>& shape2D)
             featurePoint = cv::Point((int)shape2D.at<double>(i, 0), (int)shape2D.at<double>(i, 1));
         }
         // A rough heuristic for drawn point size
-        int thickness = (int)std::ceil(5.0* ((double)img.cols) / 640.0);
-        int thickness_2 = (int)std::ceil(1.5* ((double)img.cols) / 640.0);
+        int thickness = (int)std::ceil(5.0* ((double)img.cols) / PreviewHeight);
+        int thickness_2 = (int)std::ceil(1.5* ((double)img.cols) / PreviewHeight);
 
         cv::circle(img, featurePoint, 1, cv::Scalar(0,0,255), thickness);
         cv::circle(img, featurePoint, 1, cv::Scalar(255,0,0), thickness_2);
@@ -1145,8 +1145,8 @@ void DrawLandmarks(cv::Mat img, std::vector<cv::Point> landmarks)
     for(cv::Point p : landmarks)
     {
         // A rough heuristic for drawn point size
-        int thickness = (int)std::ceil(5.0* ((double)img.cols) / 640.0);
-        int thickness_2 = (int)std::ceil(1.5* ((double)img.cols) / 640.0);
+        int thickness = (int)std::ceil(5.0* ((double)img.cols) / PreviewHeight);
+        int thickness_2 = (int)std::ceil(1.5* ((double)img.cols) / PreviewHeight);
 
         cv::circle(img, p, 1, cv::Scalar(0,0,255), thickness);
         cv::circle(img, p, 1, cv::Scalar(255,0,0), thickness_2);
@@ -1254,7 +1254,7 @@ bool DetectFaces(std::vector<cv::Rect_<double> >& o_regions, const cv::Mat_<ucha
 {
 
     std::vector<cv::Rect> face_detections;
-    classifier.detectMultiScale(intensity, face_detections, 1.1, 2, 0, cv::Size(50, 50));
+    classifier.detectMultiScale(intensity, face_detections, 1.1, 2, 0, cv::Size(20, 20));
 
     // Convert from int bounding box do a double one with corrections
     o_regions.resize(face_detections.size());
@@ -1284,7 +1284,7 @@ bool DetectSingleFace(cv::Rect_<double>& o_region, const cv::Mat_<uchar>& intens
 {
     // The tracker can return multiple faces
     std::vector<cv::Rect_<double> > face_detections;
-
+	
     bool detect_success = LandmarkDetector::DetectFaces(face_detections, intensity_image, classifier);
 
     if(detect_success)

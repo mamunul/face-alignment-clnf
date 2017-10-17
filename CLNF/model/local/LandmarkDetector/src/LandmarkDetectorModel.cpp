@@ -1,4 +1,4 @@
-﻿///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2016, Carnegie Mellon University and University of Cambridge,
 // all rights reserved.
 //
@@ -265,14 +265,14 @@ CLNF & CLNF::operator= (const CLNF&& other)
 
 void CLNF::Read_CLNF(std::string clnf_location)
 {
-    std::cout << "clnf_location = " << clnf_location << std::endl;
+    //std::cout << "clnf_location = " << clnf_location << std::endl;
     // Location of modules
     std::ifstream locations(clnf_location.c_str(), std::ios_base::in);
 
     if(!locations.is_open())
     {
-        std::cout << "Couldn't open the CLNF model file aborting" << std::endl;
-        std::cout.flush();
+        //std::cout << "Couldn't open the CLNF model file aborting" << std::endl;
+        //std::cout.flush();
         return;
     }
 
@@ -321,14 +321,14 @@ void CLNF::Read_CLNF(std::string clnf_location)
 
         if (module.compare("PDM") == 0)
         {
-            std::cout << "Reading the PDM module from: " << location << "....";
+            //std::cout << "Reading the PDM module from: " << location << "....";
             pdm.Read(location);
 
-            std::cout << "Done" << std::endl;
+            //std::cout << "Done" << std::endl;
         }
         else if (module.compare("Triangulations") == 0)
         {
-            std::cout << "Reading the Triangulations module from: " << location << "....";
+            //std::cout << "Reading the Triangulations module from: " << location << "....";
             std::ifstream triangulationFile(location.c_str(), std::ios_base::in);
 
             LandmarkDetector::SkipComments(triangulationFile);
@@ -344,7 +344,7 @@ void CLNF::Read_CLNF(std::string clnf_location)
                 LandmarkDetector::SkipComments(triangulationFile);
                 LandmarkDetector::ReadMat(triangulationFile, triangulations[i]);
             }
-            std::cout << "Done" << std::endl;
+            //std::cout << "Done" << std::endl;
         }
         else if(module.compare("PatchesIntensity") == 0)
         {
@@ -370,12 +370,12 @@ void CLNF::Read_CLNF(std::string clnf_location)
 
 void CLNF::Read(std::string main_location)
 {
-    std::cout << "Reading the CLNF landmark detector/tracker from: " << main_location << std::endl;
+    //std::cout << "Reading the CLNF landmark detector/tracker from: " << main_location << std::endl;
 
     std::ifstream locations(main_location.c_str(), std::ios_base::in);
     if(!locations.is_open())
     {
-        std::cout << "Couldn't open the model file, aborting" << std::endl;
+        //std::cout << "Couldn't open the model file, aborting" << std::endl;
         return;
     }
     std::string line;
@@ -387,7 +387,7 @@ void CLNF::Read(std::string main_location)
     std::size_t found = main_location.rfind(temp);
     if (found!=std::string::npos)
         root = main_location.substr(0, found);
-      //std::cout << "first '/' found at: " << found << '\n';
+      ////std::cout << "first '/' found at: " << found << '\n';
 
     // The main file contains the references to other files
     while (!locations.eof())
@@ -416,7 +416,7 @@ void CLNF::Read(std::string main_location)
 
         if (module.compare("LandmarkDetector") == 0)
         {
-            std::cout << "Reading the landmark detector module from: " << location << std::endl;
+            //std::cout << "Reading the landmark detector module from: " << location << std::endl;
 
             // The CLNF module includes the PDM and the patch experts
             Read_CLNF(location);
@@ -425,7 +425,7 @@ void CLNF::Read(std::string main_location)
         {
             std::string part_name;
             lineStream >> part_name;
-            std::cout << "Reading part based module...." << part_name << std::endl;
+            //std::cout << "Reading part based module...." << part_name << std::endl;
 
             std::vector<std::pair<int, int>> mappings;
             while(!lineStream.eof())
@@ -544,13 +544,13 @@ void CLNF::Read(std::string main_location)
 
             this->hierarchical_params.push_back(params);
 
-            std::cout << "Done" << std::endl;
+            //std::cout << "Done" << std::endl;
         }
         else if (module.compare("DetectionValidator") == 0)
         {
-            std::cout << "Reading the landmark validation module....";
+            //std::cout << "Reading the landmark validation module....";
             landmark_validator.Read(location);
-            std::cout << "Done" << std::endl;
+            //std::cout << "Done" << std::endl;
         }
     }
 
@@ -790,7 +790,7 @@ bool CLNF::Fit(const cv::Mat_<uchar>& im, const cv::Mat_<float>& depthImg, const
         // Can't track very small images reliably (less than ~30px across)
         if(params_global[0] < 0.25)
         {
-            std::cout << "Face too small for landmark detection" << std::endl;
+            //std::cout << "Face too small for landmark detection" << std::endl;
             return false;
         }
     }
@@ -1157,7 +1157,7 @@ bool CLNF::RemoveBackground(cv::Mat_<float>& out_depth_image, const cv::Mat_<flo
     // if we are too close to the edge fail
     if(tx - 9 <= 0 || ty - 9 <= 0 || tx + 9 >= depth_image.cols || ty + 9 >= depth_image.rows)
     {
-        std::cout << "Face estimate is too close to the edge, tracking failed" << std::endl;
+        //std::cout << "Face estimate is too close to the edge, tracking failed" << std::endl;
         return false;
     }
 
@@ -1230,7 +1230,7 @@ bool CLNF::RemoveBackground(cv::Mat_<float>& out_depth_image, const cv::Mat_<flo
     }
     else
     {
-        std::cout << "No depth signal found in foreground, tracking failed" << std::endl;
+        //std::cout << "No depth signal found in foreground, tracking failed" << std::endl;
         return false;
     }
     return true;

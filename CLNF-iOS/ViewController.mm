@@ -1,11 +1,13 @@
 //
 //  ViewController.m
-//  CLNF
+//  CLNF-iOS
 //
-//  Created by Mamunul on 10/16/17.
+//  Created by Mamunul on 10/17/17.
 //  Copyright © 2017 Mamunul. All rights reserved.
 //
+
 #import <opencv2/opencv.hpp>
+#import <opencv2/imgcodecs/ios.h>
 #import "ViewController.h"
 #include "CameraResolution.h"
 
@@ -21,7 +23,7 @@
 
 @interface ViewController(){
 	
-	
+
 	cv::Mat targetImage;
 	int frame_count;
 	AVCaptureDeviceInput *cameraDeviceInput;
@@ -39,24 +41,44 @@
 	
 	
 	frame_count = 0;
-	
+
 	
 }
-
-
--(void)viewDidAppear{
+-(AVCaptureDevice *)frontFacingCameraIfAvailable
+{
+	NSArray *videoDevices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+	AVCaptureDevice *captureDevice = nil;
+	for (AVCaptureDevice *device in videoDevices)
+	{
+		if (device.position == AVCaptureDevicePositionFront)
+		{
+			captureDevice = device;
+			break;
+		}
+	}
 	
-	[super viewDidAppear];
+	//  couldn't find one on the front, so just get the default video device.
+	if (!captureDevice)
+	{
+		captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+	}
+	
+	return captureDevice;
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+	
+	[super viewDidAppear:animated];
 	
 	
 	displayLayer = [[AVSampleBufferDisplayLayer alloc] init];
 	
 	displayLayer.bounds = self.view.bounds;
 	displayLayer.frame = self.view.frame;
-	displayLayer.backgroundColor = [NSColor blackColor].CGColor;
+	displayLayer.backgroundColor = [UIColor blackColor].CGColor;
 	displayLayer.position = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
 	displayLayer.videoGravity = AVLayerVideoGravityResizeAspect;
-	
+
 	displayLayer.transform = CATransform3DMakeScale(-1, 1, 1);
 	
 	// Remove from previous view if exists
@@ -68,7 +90,7 @@
 	[captureSession setSessionPreset:AVCaptureSessionPreset1280x720];
 	
 	// Get our camera device...
-	
+
 	AVCaptureDevice *cameraDevice = [self frontFacingCameraIfAvailable];
 	
 	NSError *error;
@@ -124,34 +146,11 @@
 	[captureSession commitConfiguration];
 	
 	[captureSession startRunning];
-	
-	
-}
--(AVCaptureDevice *)frontFacingCameraIfAvailable
-{
-	NSArray *videoDevices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
-	AVCaptureDevice *captureDevice = nil;
-	for (AVCaptureDevice *device in videoDevices)
-	{
-		if (device.position == AVCaptureDevicePositionFront)
-		{
-			captureDevice = device;
-			break;
-		}
-	}
-	
-	//  couldn't find one on the front, so just get the default video device.
-	if (!captureDevice)
-	{
-		captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-	}
-	
-	return captureDevice;
-}
--(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection{
-	
-	
 
+
+}
+
+-(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection{
 	
 	CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
 	
@@ -171,19 +170,13 @@
 	fy = fx;
 	
 	[[[FaceARDetectIOS alloc] init] run_FaceAR:targetImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy];
-	
+
 	frame_count = frame_count + 1;
 	CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
 	[displayLayer enqueueSampleBuffer:sampleBuffer];
-
+	
+	
+	
 }
-
-
-- (void)setRepresentedObject:(id)representedObject {
-	[super setRepresentedObject:representedObject];
-
-	// Update the view, if already loaded.
-}
-
 
 @end

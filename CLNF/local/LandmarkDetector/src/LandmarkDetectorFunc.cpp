@@ -1,4 +1,4 @@
-﻿///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2016, Carnegie Mellon University and University of Cambridge,
 // all rights reserved.
 //
@@ -563,6 +563,7 @@ bool LandmarkDetector::DetectLandmarksInImage(const cv::Mat_<uchar> &grayscale_i
 	// If the face detector has not been initialised read it in
 	if(clnf_model.face_detector_HAAR.empty())
 	{
+        printf("st:%s\n",params.face_detector_location.c_str());
 		clnf_model.face_detector_HAAR.load(params.face_detector_location);
 		clnf_model.face_detector_location = params.face_detector_location;
 	}
@@ -576,6 +577,8 @@ bool LandmarkDetector::DetectLandmarksInImage(const cv::Mat_<uchar> &grayscale_i
 //	else
     if(params.curr_face_detector == FaceModelParameters::HAAR_DETECTOR)
 	{
+		
+		
 		
 		std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
 		LandmarkDetector::DetectSingleFace(bounding_box, grayscale_image, clnf_model.face_detector_HAAR);

@@ -64,6 +64,7 @@
 #include <opencv2/core/core.hpp>
 
 #include "LandmarkDetectorModel.h"
+#include "CameraResolution.h"
 
 //using namespace std;
 

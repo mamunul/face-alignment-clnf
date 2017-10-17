@@ -1,18 +1,18 @@
 //
-//  CLNFUITests.m
-//  CLNFUITests
+//  CLNF_iOSUITests.m
+//  CLNF-iOSUITests
 //
-//  Created by Mamunul on 10/16/17.
+//  Created by Mamunul on 10/17/17.
 //  Copyright © 2017 Mamunul. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface CLNFUITests : XCTestCase
+@interface CLNF_iOSUITests : XCTestCase
 
 @end
 
-@implementation CLNFUITests
+@implementation CLNF_iOSUITests
 
 - (void)setUp {
     [super setUp];

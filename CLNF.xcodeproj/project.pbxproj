@@ -7,6 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C8C22D71F95BC5400F08490 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8C22D61F95BC5400F08490 /* opencv2.framework */; };
+		0C8C22E01F95BCCB00F08490 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C22DF1F95BCCB00F08490 /* main.m */; };
+		0C8C22E31F95BCCB00F08490 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C22E21F95BCCB00F08490 /* AppDelegate.m */; };
+		0C8C22E61F95BCCB00F08490 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C22E51F95BCCB00F08490 /* ViewController.mm */; };
+		0C8C22E91F95BCCB00F08490 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C8C22E71F95BCCB00F08490 /* Main.storyboard */; };
+		0C8C22EB1F95BCCB00F08490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C8C22EA1F95BCCB00F08490 /* Assets.xcassets */; };
+		0C8C22EE1F95BCCB00F08490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C8C22EC1F95BCCB00F08490 /* LaunchScreen.storyboard */; };
+		0C8C22F91F95BCCC00F08490 /* CLNF_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C22F81F95BCCC00F08490 /* CLNF_iOSTests.m */; };
+		0C8C23041F95BCCC00F08490 /* CLNF_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C23031F95BCCC00F08490 /* CLNF_iOSUITests.m */; };
+		0C8C23181F95BE4800F08490 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8C22D61F95BC5400F08490 /* opencv2.framework */; };
+		0C8C231A1F95BE5400F08490 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8C23191F95BE5400F08490 /* CoreMedia.framework */; };
+		0C8C231C1F95BE5B00F08490 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8C231B1F95BE5B00F08490 /* CoreVideo.framework */; };
+		0C8C231E1F95BE6300F08490 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8C231D1F95BE6300F08490 /* AVFoundation.framework */; };
+		0C8C231F1F95C02700F08490 /* FaceARDetectIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC6F1F94C0E30015FFC6 /* FaceARDetectIOS.mm */; };
+		0C8C23201F95C03B00F08490 /* CCNF_patch_expert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC861F94C3300015FFC6 /* CCNF_patch_expert.cpp */; };
+		0C8C23211F95C03B00F08490 /* LandmarkDetectionValidator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC871F94C3300015FFC6 /* LandmarkDetectionValidator.cpp */; };
+		0C8C23221F95C03B00F08490 /* LandmarkDetectorFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC881F94C3300015FFC6 /* LandmarkDetectorFunc.cpp */; };
+		0C8C23231F95C03B00F08490 /* LandmarkDetectorModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC891F94C3300015FFC6 /* LandmarkDetectorModel.cpp */; };
+		0C8C23241F95C03B00F08490 /* LandmarkDetectorParameters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC8A1F94C3300015FFC6 /* LandmarkDetectorParameters.cpp */; };
+		0C8C23251F95C03B00F08490 /* LandmarkDetectorUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC8B1F94C3300015FFC6 /* LandmarkDetectorUtils.cpp */; };
+		0C8C23261F95C03B00F08490 /* Patch_experts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC8C1F94C3300015FFC6 /* Patch_experts.cpp */; };
+		0C8C23271F95C03B00F08490 /* PAW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC8D1F94C3300015FFC6 /* PAW.cpp */; };
+		0C8C23281F95C03B00F08490 /* PDM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC8E1F94C3300015FFC6 /* PDM.cpp */; };
+		0C8C23291F95C03B00F08490 /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC8F1F94C3300015FFC6 /* stdafx.cpp */; };
+		0C8C232A1F95C03B00F08490 /* SVR_patch_expert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC901F94C3300015FFC6 /* SVR_patch_expert.cpp */; };
+		0C8C232B1F95C18300F08490 /* classifiers in Resources */ = {isa = PBXBuildFile; fileRef = 0C97CC6A1F94BEA10015FFC6 /* classifiers */; };
+		0C8C232C1F95C18300F08490 /* model in Resources */ = {isa = PBXBuildFile; fileRef = 0C97CC6B1F94BEA10015FFC6 /* model */; };
 		0C97CC3C1F94BE8D0015FFC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC3B1F94BE8D0015FFC6 /* AppDelegate.m */; };
 		0C97CC3F1F94BE8D0015FFC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC3E1F94BE8D0015FFC6 /* main.m */; };
 		0C97CC421F94BE8D0015FFC6 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC411F94BE8D0015FFC6 /* ViewController.mm */; };
@@ -30,12 +57,25 @@
 		0C97CC9B1F94C3300015FFC6 /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC8F1F94C3300015FFC6 /* stdafx.cpp */; };
 		0C97CC9C1F94C3300015FFC6 /* SVR_patch_expert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC901F94C3300015FFC6 /* SVR_patch_expert.cpp */; };
 		0C97CC9F1F94CA1C0015FFC6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C97CC9E1F94CA1C0015FFC6 /* AVFoundation.framework */; };
-		0C97CCA11F94D1AE0015FFC6 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C97CCA01F94D1AE0015FFC6 /* opencv2.framework */; };
 		0C97CCA31F94D4520015FFC6 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C97CCA21F94D4520015FFC6 /* CoreMedia.framework */; };
 		0C97CCA51F94D4580015FFC6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C97CCA41F94D4580015FFC6 /* CoreVideo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0C8C22F51F95BCCC00F08490 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C97CC2F1F94BE8D0015FFC6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C8C22DB1F95BCCB00F08490;
+			remoteInfo = "CLNF-iOS";
+		};
+		0C8C23001F95BCCC00F08490 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C97CC2F1F94BE8D0015FFC6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C8C22DB1F95BCCB00F08490;
+			remoteInfo = "CLNF-iOS";
+		};
 		0C97CC4E1F94BE8D0015FFC6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0C97CC2F1F94BE8D0015FFC6 /* Project object */;
@@ -53,6 +93,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C8C22D61F95BC5400F08490 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		0C8C22DC1F95BCCB00F08490 /* CLNF-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CLNF-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C8C22DF1F95BCCB00F08490 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0C8C22E11F95BCCB00F08490 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0C8C22E21F95BCCB00F08490 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0C8C22E41F95BCCB00F08490 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0C8C22E51F95BCCB00F08490 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		0C8C22E81F95BCCB00F08490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0C8C22EA1F95BCCB00F08490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0C8C22ED1F95BCCB00F08490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0C8C22EF1F95BCCB00F08490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C8C22F41F95BCCC00F08490 /* CLNF-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CLNF-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C8C22F81F95BCCC00F08490 /* CLNF_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLNF_iOSTests.m; sourceTree = "<group>"; };
+		0C8C22FA1F95BCCC00F08490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C8C22FF1F95BCCC00F08490 /* CLNF-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CLNF-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C8C23031F95BCCC00F08490 /* CLNF_iOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLNF_iOSUITests.m; sourceTree = "<group>"; };
+		0C8C23051F95BCCC00F08490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C8C23191F95BE5400F08490 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		0C8C231B1F95BE5B00F08490 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/System/Library/Frameworks/CoreVideo.framework; sourceTree = DEVELOPER_DIR; };
+		0C8C231D1F95BE6300F08490 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		0C8C232D1F9606DF00F08490 /* CameraResolution.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CameraResolution.h; path = ../CameraResolution.h; sourceTree = "<group>"; };
 		0C97CC371F94BE8D0015FFC6 /* CLNF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLNF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C97CC3A1F94BE8D0015FFC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0C97CC3B1F94BE8D0015FFC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -98,19 +159,43 @@
 		0C97CC8F1F94C3300015FFC6 /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stdafx.cpp; sourceTree = "<group>"; };
 		0C97CC901F94C3300015FFC6 /* SVR_patch_expert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SVR_patch_expert.cpp; sourceTree = "<group>"; };
 		0C97CC9E1F94CA1C0015FFC6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		0C97CCA01F94D1AE0015FFC6 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		0C97CCA21F94D4520015FFC6 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		0C97CCA41F94D4580015FFC6 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0C8C22D91F95BCCB00F08490 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C8C231E1F95BE6300F08490 /* AVFoundation.framework in Frameworks */,
+				0C8C231C1F95BE5B00F08490 /* CoreVideo.framework in Frameworks */,
+				0C8C231A1F95BE5400F08490 /* CoreMedia.framework in Frameworks */,
+				0C8C23181F95BE4800F08490 /* opencv2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C8C22F11F95BCCC00F08490 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C8C22FC1F95BCCC00F08490 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0C97CC341F94BE8D0015FFC6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0C97CCA51F94D4580015FFC6 /* CoreVideo.framework in Frameworks */,
 				0C97CCA31F94D4520015FFC6 /* CoreMedia.framework in Frameworks */,
-				0C97CCA11F94D1AE0015FFC6 /* opencv2.framework in Frameworks */,
+				0C8C22D71F95BC5400F08490 /* opencv2.framework in Frameworks */,
 				0C97CC9F1F94CA1C0015FFC6 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,13 +217,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C8C22DD1F95BCCB00F08490 /* CLNF-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0C8C22E11F95BCCB00F08490 /* AppDelegate.h */,
+				0C8C22E21F95BCCB00F08490 /* AppDelegate.m */,
+				0C8C22E41F95BCCB00F08490 /* ViewController.h */,
+				0C8C22E51F95BCCB00F08490 /* ViewController.mm */,
+				0C8C22E71F95BCCB00F08490 /* Main.storyboard */,
+				0C8C22EA1F95BCCB00F08490 /* Assets.xcassets */,
+				0C8C22EC1F95BCCB00F08490 /* LaunchScreen.storyboard */,
+				0C8C22EF1F95BCCB00F08490 /* Info.plist */,
+				0C8C22DE1F95BCCB00F08490 /* Supporting Files */,
+			);
+			path = "CLNF-iOS";
+			sourceTree = "<group>";
+		};
+		0C8C22DE1F95BCCB00F08490 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C8C22DF1F95BCCB00F08490 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0C8C22F71F95BCCC00F08490 /* CLNF-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				0C8C22F81F95BCCC00F08490 /* CLNF_iOSTests.m */,
+				0C8C22FA1F95BCCC00F08490 /* Info.plist */,
+			);
+			path = "CLNF-iOSTests";
+			sourceTree = "<group>";
+		};
+		0C8C23021F95BCCC00F08490 /* CLNF-iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0C8C23031F95BCCC00F08490 /* CLNF_iOSUITests.m */,
+				0C8C23051F95BCCC00F08490 /* Info.plist */,
+			);
+			path = "CLNF-iOSUITests";
+			sourceTree = "<group>";
+		};
 		0C97CC2E1F94BE8D0015FFC6 = {
 			isa = PBXGroup;
 			children = (
-				0C97CCA01F94D1AE0015FFC6 /* opencv2.framework */,
 				0C97CC391F94BE8D0015FFC6 /* CLNF */,
 				0C97CC501F94BE8D0015FFC6 /* CLNFTests */,
 				0C97CC5B1F94BE8D0015FFC6 /* CLNFUITests */,
+				0C8C22DD1F95BCCB00F08490 /* CLNF-iOS */,
+				0C8C22F71F95BCCC00F08490 /* CLNF-iOSTests */,
+				0C8C23021F95BCCC00F08490 /* CLNF-iOSUITests */,
 				0C97CC381F94BE8D0015FFC6 /* Products */,
 				0C97CC9D1F94CA1B0015FFC6 /* Frameworks */,
 			);
@@ -150,6 +279,9 @@
 				0C97CC371F94BE8D0015FFC6 /* CLNF.app */,
 				0C97CC4D1F94BE8D0015FFC6 /* CLNFTests.xctest */,
 				0C97CC581F94BE8D0015FFC6 /* CLNFUITests.xctest */,
+				0C8C22DC1F95BCCB00F08490 /* CLNF-iOS.app */,
+				0C8C22F41F95BCCC00F08490 /* CLNF-iOSTests.xctest */,
+				0C8C22FF1F95BCCC00F08490 /* CLNF-iOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,6 +289,7 @@
 		0C97CC391F94BE8D0015FFC6 /* CLNF */ = {
 			isa = PBXGroup;
 			children = (
+				0C8C22D61F95BC5400F08490 /* opencv2.framework */,
 				0C97CC731F94C3300015FFC6 /* local */,
 				0C97CC6A1F94BEA10015FFC6 /* classifiers */,
 				0C97CC6B1F94BEA10015FFC6 /* model */,
@@ -203,6 +336,7 @@
 		0C97CC731F94C3300015FFC6 /* local */ = {
 			isa = PBXGroup;
 			children = (
+				0C8C232D1F9606DF00F08490 /* CameraResolution.h */,
 				0C97CC741F94C3300015FFC6 /* GazeEstimate */,
 				0C97CC771F94C3300015FFC6 /* LandmarkDetector */,
 			);
@@ -267,6 +401,9 @@
 		0C97CC9D1F94CA1B0015FFC6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C8C231D1F95BE6300F08490 /* AVFoundation.framework */,
+				0C8C231B1F95BE5B00F08490 /* CoreVideo.framework */,
+				0C8C23191F95BE5400F08490 /* CoreMedia.framework */,
 				0C97CCA41F94D4580015FFC6 /* CoreVideo.framework */,
 				0C97CCA21F94D4520015FFC6 /* CoreMedia.framework */,
 				0C97CC9E1F94CA1C0015FFC6 /* AVFoundation.framework */,
@@ -277,6 +414,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0C8C22DB1F95BCCB00F08490 /* CLNF-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C8C23061F95BCCC00F08490 /* Build configuration list for PBXNativeTarget "CLNF-iOS" */;
+			buildPhases = (
+				0C8C22D81F95BCCB00F08490 /* Sources */,
+				0C8C22D91F95BCCB00F08490 /* Frameworks */,
+				0C8C22DA1F95BCCB00F08490 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CLNF-iOS";
+			productName = "CLNF-iOS";
+			productReference = 0C8C22DC1F95BCCB00F08490 /* CLNF-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0C8C22F31F95BCCC00F08490 /* CLNF-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C8C23091F95BCCC00F08490 /* Build configuration list for PBXNativeTarget "CLNF-iOSTests" */;
+			buildPhases = (
+				0C8C22F01F95BCCC00F08490 /* Sources */,
+				0C8C22F11F95BCCC00F08490 /* Frameworks */,
+				0C8C22F21F95BCCC00F08490 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C8C22F61F95BCCC00F08490 /* PBXTargetDependency */,
+			);
+			name = "CLNF-iOSTests";
+			productName = "CLNF-iOSTests";
+			productReference = 0C8C22F41F95BCCC00F08490 /* CLNF-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0C8C22FE1F95BCCC00F08490 /* CLNF-iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C8C230C1F95BCCC00F08490 /* Build configuration list for PBXNativeTarget "CLNF-iOSUITests" */;
+			buildPhases = (
+				0C8C22FB1F95BCCC00F08490 /* Sources */,
+				0C8C22FC1F95BCCC00F08490 /* Frameworks */,
+				0C8C22FD1F95BCCC00F08490 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C8C23011F95BCCC00F08490 /* PBXTargetDependency */,
+			);
+			name = "CLNF-iOSUITests";
+			productName = "CLNF-iOSUITests";
+			productReference = 0C8C22FF1F95BCCC00F08490 /* CLNF-iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		0C97CC361F94BE8D0015FFC6 /* CLNF */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C97CC611F94BE8D0015FFC6 /* Build configuration list for PBXNativeTarget "CLNF" */;
@@ -339,6 +529,21 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Mamunul;
 				TargetAttributes = {
+					0C8C22DB1F95BCCB00F08490 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 9GAPXPF2Z5;
+						ProvisioningStyle = Automatic;
+					};
+					0C8C22F31F95BCCC00F08490 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0C8C22DB1F95BCCB00F08490;
+					};
+					0C8C22FE1F95BCCC00F08490 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0C8C22DB1F95BCCB00F08490;
+					};
 					0C97CC361F94BE8D0015FFC6 = {
 						CreatedOnToolsVersion = 8.2;
 						ProvisioningStyle = Automatic;
@@ -371,11 +576,40 @@
 				0C97CC361F94BE8D0015FFC6 /* CLNF */,
 				0C97CC4C1F94BE8D0015FFC6 /* CLNFTests */,
 				0C97CC571F94BE8D0015FFC6 /* CLNFUITests */,
+				0C8C22DB1F95BCCB00F08490 /* CLNF-iOS */,
+				0C8C22F31F95BCCC00F08490 /* CLNF-iOSTests */,
+				0C8C22FE1F95BCCC00F08490 /* CLNF-iOSUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0C8C22DA1F95BCCB00F08490 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C8C232B1F95C18300F08490 /* classifiers in Resources */,
+				0C8C232C1F95C18300F08490 /* model in Resources */,
+				0C8C22EE1F95BCCB00F08490 /* LaunchScreen.storyboard in Resources */,
+				0C8C22EB1F95BCCB00F08490 /* Assets.xcassets in Resources */,
+				0C8C22E91F95BCCB00F08490 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C8C22F21F95BCCC00F08490 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C8C22FD1F95BCCC00F08490 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0C97CC351F94BE8D0015FFC6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -404,6 +638,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0C8C22D81F95BCCB00F08490 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C8C23201F95C03B00F08490 /* CCNF_patch_expert.cpp in Sources */,
+				0C8C23211F95C03B00F08490 /* LandmarkDetectionValidator.cpp in Sources */,
+				0C8C23221F95C03B00F08490 /* LandmarkDetectorFunc.cpp in Sources */,
+				0C8C23231F95C03B00F08490 /* LandmarkDetectorModel.cpp in Sources */,
+				0C8C23241F95C03B00F08490 /* LandmarkDetectorParameters.cpp in Sources */,
+				0C8C23251F95C03B00F08490 /* LandmarkDetectorUtils.cpp in Sources */,
+				0C8C23261F95C03B00F08490 /* Patch_experts.cpp in Sources */,
+				0C8C23271F95C03B00F08490 /* PAW.cpp in Sources */,
+				0C8C23281F95C03B00F08490 /* PDM.cpp in Sources */,
+				0C8C23291F95C03B00F08490 /* stdafx.cpp in Sources */,
+				0C8C232A1F95C03B00F08490 /* SVR_patch_expert.cpp in Sources */,
+				0C8C231F1F95C02700F08490 /* FaceARDetectIOS.mm in Sources */,
+				0C8C22E61F95BCCB00F08490 /* ViewController.mm in Sources */,
+				0C8C22E31F95BCCB00F08490 /* AppDelegate.m in Sources */,
+				0C8C22E01F95BCCB00F08490 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C8C22F01F95BCCC00F08490 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C8C22F91F95BCCC00F08490 /* CLNF_iOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C8C22FB1F95BCCC00F08490 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C8C23041F95BCCC00F08490 /* CLNF_iOSUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0C97CC331F94BE8D0015FFC6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -446,6 +718,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0C8C22F61F95BCCC00F08490 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C8C22DB1F95BCCB00F08490 /* CLNF-iOS */;
+			targetProxy = 0C8C22F51F95BCCC00F08490 /* PBXContainerItemProxy */;
+		};
+		0C8C23011F95BCCC00F08490 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C8C22DB1F95BCCB00F08490 /* CLNF-iOS */;
+			targetProxy = 0C8C23001F95BCCC00F08490 /* PBXContainerItemProxy */;
+		};
 		0C97CC4F1F94BE8D0015FFC6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0C97CC361F94BE8D0015FFC6 /* CLNF */;
@@ -459,6 +741,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0C8C22E71F95BCCB00F08490 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C8C22E81F95BCCB00F08490 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0C8C22EC1F95BCCB00F08490 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C8C22ED1F95BCCB00F08490 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		0C97CC451F94BE8D0015FFC6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -470,6 +768,109 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0C8C23071F95BCCC00F08490 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9GAPXPF2Z5;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CLNF",
+				);
+				INFOPLIST_FILE = "CLNF-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mamunul.test.CLNF-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0C8C23081F95BCCC00F08490 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9GAPXPF2Z5;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CLNF",
+				);
+				INFOPLIST_FILE = "CLNF-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mamunul.test.CLNF-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0C8C230A1F95BCCC00F08490 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "CLNF-iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mamunul.test.CLNF-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CLNF-iOS.app/CLNF-iOS";
+			};
+			name = Debug;
+		};
+		0C8C230B1F95BCCC00F08490 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "CLNF-iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mamunul.test.CLNF-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CLNF-iOS.app/CLNF-iOS";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0C8C230D1F95BCCC00F08490 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "CLNF-iOSUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mamunul.test.CLNF-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_TARGET_NAME = "CLNF-iOS";
+			};
+			name = Debug;
+		};
+		0C8C230E1F95BCCC00F08490 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "CLNF-iOSUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mamunul.test.CLNF-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_TARGET_NAME = "CLNF-iOS";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		0C97CC5F1F94BE8D0015FFC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -565,6 +966,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/CLNF",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CLNF/Info.plist;
@@ -583,6 +985,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/CLNF",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CLNF/Info.plist;
@@ -646,6 +1049,30 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0C8C23061F95BCCC00F08490 /* Build configuration list for PBXNativeTarget "CLNF-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C8C23071F95BCCC00F08490 /* Debug */,
+				0C8C23081F95BCCC00F08490 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0C8C23091F95BCCC00F08490 /* Build configuration list for PBXNativeTarget "CLNF-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C8C230A1F95BCCC00F08490 /* Debug */,
+				0C8C230B1F95BCCC00F08490 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0C8C230C1F95BCCC00F08490 /* Build configuration list for PBXNativeTarget "CLNF-iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C8C230D1F95BCCC00F08490 /* Debug */,
+				0C8C230E1F95BCCC00F08490 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		0C97CC321F94BE8D0015FFC6 /* Build configuration list for PBXProject "CLNF" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -662,6 +1089,7 @@
 				0C97CC631F94BE8D0015FFC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0C97CC641F94BE8D0015FFC6 /* Build configuration list for PBXNativeTarget "CLNFTests" */ = {
 			isa = XCConfigurationList;
@@ -670,6 +1098,7 @@
 				0C97CC661F94BE8D0015FFC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0C97CC671F94BE8D0015FFC6 /* Build configuration list for PBXNativeTarget "CLNFUITests" */ = {
 			isa = XCConfigurationList;
@@ -678,6 +1107,7 @@
 				0C97CC691F94BE8D0015FFC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
