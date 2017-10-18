@@ -610,7 +610,14 @@ bool LandmarkDetector::DetectLandmarksInImage(const cv::Mat_<uchar> &grayscale_i
 // Versions not using depth images
 bool LandmarkDetector::DetectLandmarksInImage(const cv::Mat_<uchar> &grayscale_image, const cv::Rect_<double> bounding_box, CLNF& clnf_model, FaceModelParameters& params)
 {
-	return DetectLandmarksInImage(grayscale_image, cv::Mat_<float>(), bounding_box, clnf_model, params);
+	
+	std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
+	bool r = DetectLandmarksInImage(grayscale_image, cv::Mat_<float>(), bounding_box, clnf_model, params);
+	std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
+	
+	std::chrono::duration<double,std::milli> d = t2-t1;
+	printf("shape prediction time:%f\n",d.count());
+	return r;
 }
 
 bool LandmarkDetector::DetectLandmarksInImage(const cv::Mat_<uchar> &grayscale_image, CLNF& clnf_model, FaceModelParameters& params)

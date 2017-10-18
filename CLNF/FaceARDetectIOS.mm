@@ -6,18 +6,22 @@
 //  Copyright © 2016 Keegan Ren. All rights reserved.
 //
 
+
+
+#import "FaceARDetectIOS.h"
+#include "CameraResolution.h"
+
 #if TARGET_IPHONE_SIMULATOR
-    #import <opencv2/imgcodecs/ios.h>
+#import <opencv2/imgcodecs/ios.h>
+#import <UIKit/UIKit.h>
 #elif TARGET_OS_IPHONE
-	#import <opencv2/imgcodecs/ios.h>
+#import <opencv2/imgcodecs/ios.h>
+#import <UIKit/UIKit.h>
 #elif TARGET_OS_MAC
 
 #else
 
 #endif
-
-#import "FaceARDetectIOS.h"
-#include "CameraResolution.h"
 
 LandmarkDetector::FaceModelParameters det_parameters;
 // The modules that are being used for tracking
@@ -85,7 +89,12 @@ void visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image, c
 {
 	
 	cv::Mat_<float> depth_image;
+	
+//	cv::Mat grayScale_image = captured_image.clone();
+	
 	bool detection_success = LandmarkDetector::DetectLandmarksInImage(captured_image, bounding_box, clnf_model, det_parameters);
+	
+	
 	
 	// Visualising the results
 	// Drawing the facial landmarks on the face and the bounding box around it if tracking is successful and initialised
@@ -94,7 +103,7 @@ void visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image, c
 	visualise_tracking(captured_image, depth_image, clnf_model, det_parameters, frame_count, fx, fy, cx, cy);
 	
 	
-	//	UIImage *image = MatToUIImage(captured_image);
+//	UIImage *image = MatToUIImage(captured_image);
 	
 	//////////////////////////////////////////////////////////////////////
 	/// gaze EstimateGaze

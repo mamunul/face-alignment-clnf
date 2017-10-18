@@ -31,6 +31,7 @@
 	FDFaceDetector *faceDetector;
 	
 	CameraData cameraData;
+	FaceARDetectIOS *faceAR;
 	
 	
 }
@@ -50,8 +51,9 @@
 	
 	cameraData.numberOfPixels = PreviewHeight * PreviewWidth;
 	
-	
 	frame_count = 0;
+	
+	faceAR = [[FaceARDetectIOS alloc] init];
 
 	
 }
@@ -167,8 +169,11 @@
 	
 	CVPixelBufferLockBaseAddress(imageBuffer, 0);
 	unsigned char* yBuf = (unsigned char*)CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 0);
-	
 	targetImage = cv::Mat(PreviewHeight,PreviewWidth,CV_8UC1,yBuf,0);
+	CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
+	
+	
+//	memcpy(targetImage.data, yBuf, cameraData.numberOfPixels);
 	
 	float fx, fy, cx, cy;
 	cx = 1.0*targetImage.cols / 2.0;
@@ -205,19 +210,19 @@
 		// before passing for shape prediction.
 		bounding_box.width = rect.size.width;
 		bounding_box.height = rect.size.height;
-		bounding_box.x = width - rect.origin.x - bounding_box.width;
+		bounding_box.x = rect.origin.x;
 		bounding_box.y = height - rect.origin.y - bounding_box.height;
 		
 		
-		[[[FaceARDetectIOS alloc] init] run_FaceAR:targetImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy FaceRect:bounding_box];
+		[faceAR run_FaceAR:targetImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy FaceRect:bounding_box];
 		
 	}
 
 //
-//	[[[FaceARDetectIOS alloc] init] run_FaceAR:targetImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy];
+//	[faceAR run_FaceAR:targetImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy];
 
 	frame_count = frame_count + 1;
-	CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
+	
 	[displayLayer enqueueSampleBuffer:sampleBuffer];
 	
 	
