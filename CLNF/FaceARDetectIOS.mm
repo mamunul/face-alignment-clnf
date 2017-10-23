@@ -6,18 +6,22 @@
 //  Copyright © 2016 Keegan Ren. All rights reserved.
 //
 
+
+
+#import "FaceARDetectIOS.h"
+#include "CameraResolution.h"
+
 #if TARGET_IPHONE_SIMULATOR
-    #import <opencv2/imgcodecs/ios.h>
+#import <opencv2/imgcodecs/ios.h>
+#import <UIKit/UIKit.h>
 #elif TARGET_OS_IPHONE
-	#import <opencv2/imgcodecs/ios.h>
+#import <opencv2/imgcodecs/ios.h>
+#import <UIKit/UIKit.h>
 #elif TARGET_OS_MAC
 
 #else
 
 #endif
-
-#import "FaceARDetectIOS.h"
-#include "CameraResolution.h"
 
 LandmarkDetector::FaceModelParameters det_parameters;
 // The modules that are being used for tracking
@@ -81,6 +85,41 @@ void visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image, c
 	
 }
 
+-(BOOL) run_FaceAR:(cv::Mat)captured_image frame__:(int)frame_count fx__:(double)fx fy__:(double)fy cx__:(double)cx cy__:(double)cy FaceRect:(const cv::Rect_<double>) bounding_box
+{
+	
+	cv::Mat_<float> depth_image;
+	
+//	cv::Mat grayScale_image = captured_image.clone();
+	
+	bool detection_success = LandmarkDetector::DetectLandmarksInImage(captured_image, bounding_box, clnf_model, det_parameters);
+	
+	
+	
+	// Visualising the results
+	// Drawing the facial landmarks on the face and the bounding box around it if tracking is successful and initialised
+	double detection_certainty = clnf_model.detection_certainty;
+	
+	visualise_tracking(captured_image, depth_image, clnf_model, det_parameters, frame_count, fx, fy, cx, cy);
+	
+	
+//	UIImage *image = MatToUIImage(captured_image);
+	
+	//////////////////////////////////////////////////////////////////////
+	/// gaze EstimateGaze
+	///
+	//    cv::Point3f gazeDirection0(0, 0, -1);
+	//    cv::Point3f gazeDirection1(0, 0, -1);
+	//    if (det_parameters.track_gaze && detection_success && clnf_model.eye_model)
+	//    {
+	//        GazeEstimate::EstimateGaze(clnf_model, gazeDirection0, fx, fy, cx, cy, true);
+	//        GazeEstimate::EstimateGaze(clnf_model, gazeDirection1, fx, fy, cx, cy, false);
+	//        GazeEstimate::DrawGaze(captured_image, clnf_model, gazeDirection0, gazeDirection1, fx, fy, cx, cy);
+	//    }
+	
+	return true;
+}
+
 
 //bool run_FaceAR(cv::Mat &captured_image, int frame_count, float fx, float fy, float cx, float cy);
 -(BOOL) run_FaceAR:(cv::Mat)captured_image frame__:(int)frame_count fx__:(double)fx fy__:(double)fy cx__:(double)cx cy__:(double)cy
@@ -100,6 +139,7 @@ void visualise_tracking(cv::Mat& captured_image, cv::Mat_<float>& depth_image, c
 	
     // The actual facial landmark detection / tracking
 //    bool detection_success = LandmarkDetector::DetectLandmarksInVideo(grayscale_image, depth_image, clnf_model, det_parameters);
+	
 	bool detection_success = LandmarkDetector::DetectLandmarksInImage(captured_image, depth_image, clnf_model, det_parameters);
 	
     // Visualising the results

@@ -10,11 +10,10 @@
 #import <opencv2/imgcodecs/ios.h>
 #import "ViewController.h"
 #include "CameraResolution.h"
+#import "FDFaceDetector.h"
+#import "FDFaceFeatures.h"
 
 
-///// opencv
-
-///// C++
 #include <iostream>
 ///// user
 #include "FaceARDetectIOS.h"
@@ -29,6 +28,10 @@
 	AVCaptureDeviceInput *cameraDeviceInput;
 	AVCaptureSession* captureSession;
 	AVSampleBufferDisplayLayer* displayLayer;
+	FDFaceDetector *faceDetector;
+	
+	CameraData cameraData;
+	FaceARDetectIOS *faceAR;
 	
 	
 }
@@ -39,8 +42,18 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
+	EAGLContext *eaglContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+	NSDictionary *contextSettings = [NSDictionary dictionaryWithObject:[NSNull null]
+																forKey:(id)kCIContextWorkingColorSpace];
+	CIContext *ciContext = [CIContext contextWithEAGLContext:eaglContext options:contextSettings];
+	faceDetector = [[FDFaceDetector alloc] initWithContext:ciContext];
+	
+	
+	cameraData.numberOfPixels = PreviewHeight * PreviewWidth;
 	
 	frame_count = 0;
+	
+	faceAR = [[FaceARDetectIOS alloc] init];
 
 	
 }
@@ -156,8 +169,11 @@
 	
 	CVPixelBufferLockBaseAddress(imageBuffer, 0);
 	unsigned char* yBuf = (unsigned char*)CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 0);
-	
 	targetImage = cv::Mat(PreviewHeight,PreviewWidth,CV_8UC1,yBuf,0);
+	CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
+	
+	
+//	memcpy(targetImage.data, yBuf, cameraData.numberOfPixels);
 	
 	float fx, fy, cx, cy;
 	cx = 1.0*targetImage.cols / 2.0;
@@ -168,11 +184,45 @@
 	
 	fx = (fx + fy) / 2.0;
 	fy = fx;
+	cv::Rect_<double> bounding_box;
 	
-	[[[FaceARDetectIOS alloc] init] run_FaceAR:targetImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy];
+	
+	cameraData.processedData = imageBuffer;
+	
+	std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
+	
+	NSArray *faceArray = [faceDetector detectFaceInSampleBuffer:cameraData];
+	std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
+	
+	std::chrono::duration<double,std::milli> d = t2-t1;
+	printf("face detection time:%f\n",d.count());
+	
+	if (faceArray.count > 0) {
+		FDFaceFeatures *faceFeature = (FDFaceFeatures*)[faceArray objectAtIndex:0];
+		
+		const CGRect rect = faceFeature.detectedFaceFeature.bounds;
+		const int width = faceFeature.ImageSize.width;
+		const int height = faceFeature.ImageSize.height;
+		
+		// The origin of CIFaceFeature is right-bottom of image and X-axis and Y-axis are leftward and upward
+		// respectively. But dlib expects upright image so dlib image origin is left-top and X-axis and Y-axis
+		// are rightward and downward respectively. So we transformed CIFaceFeature rectangle to dlib::rectangle
+		// before passing for shape prediction.
+		bounding_box.width = rect.size.width;
+		bounding_box.height = rect.size.height;
+		bounding_box.x = rect.origin.x;
+		bounding_box.y = height - rect.origin.y - bounding_box.height;
+		
+		
+		[faceAR run_FaceAR:targetImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy FaceRect:bounding_box];
+		
+	}
+
+//
+//	[faceAR run_FaceAR:targetImage frame__:frame_count fx__:fx fy__:fy cx__:cx cy__:cy];
 
 	frame_count = frame_count + 1;
-	CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
+	
 	[displayLayer enqueueSampleBuffer:sampleBuffer];
 	
 	

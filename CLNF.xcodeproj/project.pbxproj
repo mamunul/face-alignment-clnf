@@ -34,6 +34,10 @@
 		0C8C232A1F95C03B00F08490 /* SVR_patch_expert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC901F94C3300015FFC6 /* SVR_patch_expert.cpp */; };
 		0C8C232B1F95C18300F08490 /* classifiers in Resources */ = {isa = PBXBuildFile; fileRef = 0C97CC6A1F94BEA10015FFC6 /* classifiers */; };
 		0C8C232C1F95C18300F08490 /* model in Resources */ = {isa = PBXBuildFile; fileRef = 0C97CC6B1F94BEA10015FFC6 /* model */; };
+		0C8C233C1F961AA300F08490 /* FDFaceDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C23391F961AA300F08490 /* FDFaceDetector.m */; };
+		0C8C233D1F961AA300F08490 /* FDFaceFeatures.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C233B1F961AA300F08490 /* FDFaceFeatures.m */; };
+		0C8C233E1F961AAF00F08490 /* FDFaceDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C23391F961AA300F08490 /* FDFaceDetector.m */; };
+		0C8C233F1F961AB200F08490 /* FDFaceFeatures.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C233B1F961AA300F08490 /* FDFaceFeatures.m */; };
 		0C97CC3C1F94BE8D0015FFC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC3B1F94BE8D0015FFC6 /* AppDelegate.m */; };
 		0C97CC3F1F94BE8D0015FFC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC3E1F94BE8D0015FFC6 /* main.m */; };
 		0C97CC421F94BE8D0015FFC6 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC411F94BE8D0015FFC6 /* ViewController.mm */; };
@@ -114,6 +118,11 @@
 		0C8C231B1F95BE5B00F08490 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/System/Library/Frameworks/CoreVideo.framework; sourceTree = DEVELOPER_DIR; };
 		0C8C231D1F95BE6300F08490 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		0C8C232D1F9606DF00F08490 /* CameraResolution.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CameraResolution.h; path = ../CameraResolution.h; sourceTree = "<group>"; };
+		0C8C23371F961AA300F08490 /* FDFaceDetectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDFaceDetectionDelegate.h; sourceTree = "<group>"; };
+		0C8C23381F961AA300F08490 /* FDFaceDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDFaceDetector.h; sourceTree = "<group>"; };
+		0C8C23391F961AA300F08490 /* FDFaceDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDFaceDetector.m; sourceTree = "<group>"; };
+		0C8C233A1F961AA300F08490 /* FDFaceFeatures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDFaceFeatures.h; sourceTree = "<group>"; };
+		0C8C233B1F961AA300F08490 /* FDFaceFeatures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDFaceFeatures.m; sourceTree = "<group>"; };
 		0C97CC371F94BE8D0015FFC6 /* CLNF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLNF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C97CC3A1F94BE8D0015FFC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0C97CC3B1F94BE8D0015FFC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -259,6 +268,18 @@
 			path = "CLNF-iOSUITests";
 			sourceTree = "<group>";
 		};
+		0C8C23361F961AA300F08490 /* FaceDetection */ = {
+			isa = PBXGroup;
+			children = (
+				0C8C23371F961AA300F08490 /* FDFaceDetectionDelegate.h */,
+				0C8C23381F961AA300F08490 /* FDFaceDetector.h */,
+				0C8C23391F961AA300F08490 /* FDFaceDetector.m */,
+				0C8C233A1F961AA300F08490 /* FDFaceFeatures.h */,
+				0C8C233B1F961AA300F08490 /* FDFaceFeatures.m */,
+			);
+			path = FaceDetection;
+			sourceTree = "<group>";
+		};
 		0C97CC2E1F94BE8D0015FFC6 = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +310,7 @@
 		0C97CC391F94BE8D0015FFC6 /* CLNF */ = {
 			isa = PBXGroup;
 			children = (
+				0C8C23361F961AA300F08490 /* FaceDetection */,
 				0C8C22D61F95BC5400F08490 /* opencv2.framework */,
 				0C97CC731F94C3300015FFC6 /* local */,
 				0C97CC6A1F94BEA10015FFC6 /* classifiers */,
@@ -656,7 +678,9 @@
 				0C8C231F1F95C02700F08490 /* FaceARDetectIOS.mm in Sources */,
 				0C8C22E61F95BCCB00F08490 /* ViewController.mm in Sources */,
 				0C8C22E31F95BCCB00F08490 /* AppDelegate.m in Sources */,
+				0C8C233E1F961AAF00F08490 /* FDFaceDetector.m in Sources */,
 				0C8C22E01F95BCCB00F08490 /* main.m in Sources */,
+				0C8C233F1F961AB200F08490 /* FDFaceFeatures.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,8 +707,10 @@
 				0C97CC701F94C0E30015FFC6 /* FaceARDetectIOS.mm in Sources */,
 				0C97CC941F94C3300015FFC6 /* LandmarkDetectorFunc.cpp in Sources */,
 				0C97CC421F94BE8D0015FFC6 /* ViewController.mm in Sources */,
+				0C8C233D1F961AA300F08490 /* FDFaceFeatures.m in Sources */,
 				0C97CC921F94C3300015FFC6 /* CCNF_patch_expert.cpp in Sources */,
 				0C97CC981F94C3300015FFC6 /* Patch_experts.cpp in Sources */,
+				0C8C233C1F961AA300F08490 /* FDFaceDetector.m in Sources */,
 				0C97CC9A1F94C3300015FFC6 /* PDM.cpp in Sources */,
 				0C97CC9C1F94C3300015FFC6 /* SVR_patch_expert.cpp in Sources */,
 				0C97CC911F94C3300015FFC6 /* GazeEstimation.cpp in Sources */,
@@ -1056,6 +1082,7 @@
 				0C8C23081F95BCCC00F08490 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0C8C23091F95BCCC00F08490 /* Build configuration list for PBXNativeTarget "CLNF-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -1064,6 +1091,7 @@
 				0C8C230B1F95BCCC00F08490 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0C8C230C1F95BCCC00F08490 /* Build configuration list for PBXNativeTarget "CLNF-iOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -1072,6 +1100,7 @@
 				0C8C230E1F95BCCC00F08490 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0C97CC321F94BE8D0015FFC6 /* Build configuration list for PBXProject "CLNF" */ = {
 			isa = XCConfigurationList;
